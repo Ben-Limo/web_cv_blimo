@@ -31,7 +31,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">Start Bootstrap</span>
+        <span class="d-block d-lg-none">My Resume</span>
         <span class="d-none d-lg-block">
           <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="static/website/img/profile2.jpg" alt="">
         </span>
@@ -95,7 +95,7 @@
               </a>
             </li> -->
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://www.linkedin.com/in/benson-limo-15082015b">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
@@ -103,7 +103,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://github.com/Ben-Limo/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -276,8 +276,9 @@
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
         <div class="my-auto">
           <h2 class="mb-5">Interests</h2>
-          <p>Apart from being a web developer, I am huge travelling enthusiast and sports fan especially football. I play for a local club during the weekends and emerged the best young team in the whole tournament for Rongai supremacy cup</p>
-          <p class="mb-0">When forced indoors, I follow most of the popular American tv show and local movies. I also enjoy reading novels and life empowering books that will inspire you.</p>
+          <p>Apart from being a web developer, I am huge travelling enthusiast and sports fan especially football. I play for a local club in my home town during the occasional visit I make there. </p>
+          <p class="mb-0">When forced indoors, I follow most of the popular American tv show and local movies. I also enjoy reading novels and life empowering books that will inspire you.</p><br>
+          <p class="mb-0">On the sideshow you can interact with my assistant a cool telegram bot that will be glad to say hi back and fill you in on my extra works. <strong><a href="https://t.me/Tuweibot">click here</a></strong></p>
         </div>
       </section>
 
@@ -321,10 +322,19 @@
               {% if errors %}
               {{ errors }}
               {% endif %}
+              
+              {% if messages %}
+                <ul class="messages">
+                  {% for message in messages %}
+                  <li class="{{ message.tags }}">{{ message }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+
               <form method="POST"> {% csrf_token %}
                 {{ form.as_p }}
                   <button type="submit">Submit</button>
-
+                
             </div>
       </section>
 

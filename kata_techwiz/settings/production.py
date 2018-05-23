@@ -20,12 +20,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = '=ott=-0@sd#^wnw+j=%n(5+34xykomkjsj!p9=m7c15)bkzufd'
+
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '=ott=-0@sd#^wnw+j=%n(5+34xykomkjsj!p9=m7c15)bkzufd')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
 
-ALLOWED_HOSTS = []
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
+
+ALLOWED_HOSTS = ['blimo-cv.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -114,10 +116,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-
-ALLOWED_HOSTS = ['kanjoo-cv.herokuapp.com','127.0.0.1']
-
 
 
 # Static files (CSS, JavaScript, Images)
