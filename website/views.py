@@ -27,6 +27,6 @@ class HomePageView(SuccessMessageMixin, CreateView):
 			message 	= "{name} from {company} said:- \n {comment} \n\n You can reach them through: {emailFrom}".format(**data)
 			
 			emailTo		= [settings.EMAIL_HOST_USER]
-			send_mail(subject, message, emailFrom, emailTo, fail_silently= True)
+			send_mail(subject, message, emailFrom, emailTo, fail_silently= False)
 
 			return super(HomePageView, self).form_valid(form)
